@@ -14,6 +14,12 @@ if (process.env.NODE_ENV === 'production') {
   app.use(express.static(join(__dirname, '..')));
 }
 
+
+// Serve static files in production
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(join(__dirname, '..')));
+}
+
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
   cors: {
