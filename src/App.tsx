@@ -9,7 +9,7 @@ function App() {
   useEffect(() => {
     if (!containerRef.current) return;
 
-    const socket = io(import.meta.env.VITE_SERVER_URL || 'http://localhost:3000');
+    const socket = io(import.meta.env.SERVER_URL || 'http://localhost:3000');
     const game = new GameEngine(containerRef.current, socket);
 
     return () => {
